@@ -13,6 +13,15 @@ searchResults =
     ]
 
 
+model =
+    { result =
+        { id = 1
+        , name = "TheSeamau5/elm-checkerboardgrid-tutorial"
+        , stars = 66
+        }
+    }
+
+
 main =
     let
         elmHubHeader =
@@ -22,23 +31,29 @@ main =
                 ]
     in
     div [ class "content" ]
-        [ text "TODO put the contents of elmHubHeader here instead of this text!"
+        [ elmHubHeader
         , ul [ class "results" ]
             -- TODO replace this [] with a `List.map` to turn `searchResults` into some Html!
             --
             -- HINT: You'll need some parentheses to do this!
-            []
+            (List.map
+                text
+                searchResults
+            )
+
+        -- [ li [] [ text "1" ], li [] [ text "2" ], li [] [ text "3" ] ]
         ]
 
 
 viewSearchResult searchResult =
     li []
-        [-- TODO use `searchResult` to put a link here that points to
-         -- something like this:
-         --
-         -- https://github.com/TheSeamau5/elm-checkerboardgrid-tutorial
-         --
-         -- by prepending "https://github.com/" to the searchResult string
-         --
-         -- HINT: This will also involve using parentheses!
+        [ -- TODO use `searchResult` to put a link here that points to
+          -- something like this:
+          --
+          -- https://github.com/TheSeamau5/elm-checkerboardgrid-tutorial
+          --
+          -- by prepending "https://github.com/" to the searchResult string
+          --
+          -- HINT: This will also involve using parentheses!
+          a [ href ("https://github.com/" ++ "TheSeamau5/elm-checkerboardgrid-tutorial") ] [ text (toString (List.head searchResults)) ]
         ]
