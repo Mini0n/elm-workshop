@@ -37,7 +37,7 @@ main =
             --
             -- HINT: You'll need some parentheses to do this!
             (List.map
-                paintLi
+                viewSearchResult
                 searchResults
             )
 
@@ -55,9 +55,10 @@ viewSearchResult searchResult =
           -- by prepending "https://github.com/" to the searchResult string
           --
           -- HINT: This will also involve using parentheses!
-          a [ href ("https://github.com/" ++ "TheSeamau5/elm-checkerboardgrid-tutorial") ] [ text (toString (List.head searchResults)) ]
+          a [ href ("https://github.com/" ++ searchResult) ] [ text searchResult ]
         ]
 
 
-paintLi txt =
-    li [] [ text txt ]
+
+-- paintLi txt =
+--     li [] [ text txt ]
