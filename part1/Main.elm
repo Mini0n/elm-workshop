@@ -8,10 +8,6 @@ main =
     div [ class "content" ]
         [ header []
             [ h1 [] [ text "ElmHub" ]
-            , span
-                [ class "tagline"
-                ]
-                [ text "Like GitHub, but for Elm stuff"
-                ]
+            , span [ class "tagline" ] [ text "Like GitHub, but for Elm stuff" ]
             ]
         ]
