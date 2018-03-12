@@ -37,7 +37,7 @@ main =
             --
             -- HINT: You'll need some parentheses to do this!
             (List.map
-                text
+                paintLi
                 searchResults
             )
 
@@ -57,3 +57,7 @@ viewSearchResult searchResult =
           -- HINT: This will also involve using parentheses!
           a [ href ("https://github.com/" ++ "TheSeamau5/elm-checkerboardgrid-tutorial") ] [ text (toString (List.head searchResults)) ]
         ]
+
+
+paintLi txt =
+    li [] [ text txt ]
