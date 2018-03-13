@@ -53,7 +53,10 @@ viewSearchResult result =
             [ text result.name ]
         , button
             -- TODO add an onClick handler that sends a "DELETE_BY_ID" msg
-            [ class "hide-result" ]
+            [ class "hide-result"
+            , onClick
+                { operation = "DELETE_BY_ID", data_id = result.id }
+            ]
             [ text "X" ]
         ]
 
@@ -61,7 +64,10 @@ viewSearchResult result =
 update msg model =
     -- TODO if msg.operation == "DELETE_BY_ID",
     -- then return a new model without the given ID present anymore.
-    model
+    if msg.operation == "DELETE_BY_ID" then
+        { model | results = List.filter (\el -> el.id /= msg.data_id) model.results }
+    else
+        model
 
 
 main =
