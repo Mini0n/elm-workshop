@@ -54,8 +54,7 @@ viewSearchResult result =
         , button
             -- TODO add an onClick handler that sends a "DELETE_BY_ID" msg
             [ class "hide-result"
-            , onClick
-                { operation = "DELETE_BY_ID", data_id = result.id }
+            , onClick { operation = "DELETE_BY_ID", data_id = result.id }
             ]
             [ text "X" ]
         ]
